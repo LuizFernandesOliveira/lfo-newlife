@@ -23,6 +23,7 @@ export default function Header() {
                     <MdPhone size={25} color='#0a00b6' />
                     <p>(84) 98187-6195</p>
                 </div>
+                
             </header>
         </Container>
     )
