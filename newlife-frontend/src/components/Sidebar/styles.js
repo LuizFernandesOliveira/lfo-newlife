@@ -1,35 +1,43 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-background: blue;
-nav{
+display: flex;
+justify-content: center;
+background: white;
+header{
     width: 80%;
     height: 100px;
     display: flex;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
 
-    header{
+    div.img-logo{
+        img{
+            width: calc(40vmin + 10%);
+        }
+            
+    }
+
+    div.cart{
+        display: flex;
         align-items: center;
-        div.img-logo{
-            width: 100%;
-            border: 1px solid black;
-            img{
-                width: calc(40vmin + 10%);
-            }
+        p{
             
         }
-        div.cart{
-            width: 100%;
-            border: 1px solid black;
-            p{
-
-            }
-        }
-    }
-
-    div{
-
     }
 }
+@media only screen and (max-width: 960px) {
+    header{
+        width: 100%;
+        height: 100px;
+        div.img-logo{
+            width: 50%;
+        }
 
+        div.cart{
+            width: 50%;
+            justify-content: flex-end;
+        }
+    }
+}
 `;
