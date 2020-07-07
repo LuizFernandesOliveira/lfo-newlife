@@ -13,6 +13,8 @@ import {
      MdClose
 } from 'react-icons/md'
 
+import NewLife from './newlife.png'
+
 import { Link } from 'react-router-dom'
 
 export default function Header() {
@@ -37,9 +39,9 @@ export default function Header() {
                     <div>
                         <MdPeople size={25} color='#0a00b6' />
                         <p>Seja bem vindo!</p>
-                        <p>Faça seu
-                        <Link to='/login'>login</Link> ou
-                        <Link to='/register'>cadastre-se</Link>
+                        <p>
+                        <Link to='/login'></Link>
+                        <Link to='/register'></Link>
                         </p>
                     </div>
                     <div>
@@ -48,14 +50,14 @@ export default function Header() {
                             <li><Link to='/'>Minha Conta</Link></li>
                         </ul>
                         <MdPhone size={25} color='#0a00b6' />
-                        <p>(84) 98187-6195</p>
+                        <p>(84) 98831-3308</p>
                     </div>
                 </header>
             </ContainerHeader>
             <ContainerSidebar>
                 <header>
                     <div className='img-logo'>
-                        <img src="https://revthink.com/wp-content/uploads/2018/04/revthink-logo-2018.png" alt="" />
+                        <img src={NewLife} alt="" />
                     </div>
                     <div className='cart'>
                         <Link to='/'><MdShoppingCart size={40} color='#0a00b6' />

@@ -34,6 +34,8 @@ header{
         }
 
         ul{
+
+            display: none;
             
             li{
                 display: inline;
@@ -54,7 +56,7 @@ header{
             ul{
                 display: flex;
                 li{
-                    display: inline-block;
+                    display: none;
                 }
             }
         }
@@ -70,7 +72,7 @@ header{
             ul{
                 display: flex;
                 li{
-                    display: inline-block;
+                    display: none;
                 }
             }
         }
@@ -79,6 +81,7 @@ header{
 `;
 
 export const ContainerSidebar = styled.div`
+padding-top: 10px;
 display: flex;
 justify-content: center;
 background: white;
@@ -90,8 +93,10 @@ header{
     justify-content: space-between;
 
     div.img-logo{
-        padding: 0 10px;
+        padding: 10px 10px;
+        margin: 10px 10px;
         img{
+            
             width: calc(40vmin + 10%);
         }
     }
@@ -120,6 +125,7 @@ display: none;
     width: 100%;
     height: 50px;
     background: white;
+    margin: 0;
 
     button.active{
         display: ${props => props.inline[0] ? "inline-block": "none"};
@@ -150,6 +156,7 @@ export const ContainerNav = styled.div`
 display: flex;
 justify-content: center;
 background: white;
+margin: 0;
 
 nav{
     width: 80%;
