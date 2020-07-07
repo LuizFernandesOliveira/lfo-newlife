@@ -105,18 +105,43 @@ header{
         }
     }
 }
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 720px) {
     header{
         width: 100%;
         height: 100px;
-        div.img-logo{
-            width: 50%;
-        }
+    }
+}
+`;
+export const ButtonNav = styled.div`
+display: none;
 
-        div.cart{
-            width: 50%;
-            justify-content: flex-end;
-        }
+@media only screen and (max-width: 720px) {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    background: white;
+
+    button.active{
+        display: ${props => props.inline[0] ? "inline-block": "none"};
+        opacity: 1;
+        width: 100%;
+        background-color: #64b5f6;
+        border: none;
+        transition: opacity 0.6s;
+    }
+    button.active:hover{
+        opacity: 0.8;
+    }
+    button.deactive{
+        display: ${props => props.inline[1] ? "inline-block": "none"};
+        opacity: 1;
+        width: 100%;
+        background-color: #64b5f6;
+        border: none;
+        transition: opacity 0.6s;
+    }
+    button.deactive:hover{
+        opacity: 0.8;
     }
 }
 `;
@@ -125,6 +150,7 @@ export const ContainerNav = styled.div`
 display: flex;
 justify-content: center;
 background: white;
+
 nav{
     width: 80%;
     height: 50px;
@@ -144,6 +170,31 @@ nav{
             padding: 10px 10px;
             a{
                 text-decoration: none;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 720px) {
+    nav{
+        display: ${props => props.act ? "inline-block": "none"};
+        height: 100%;
+
+        ul{
+            flex-direction: column;
+
+            li{
+                width: 100%;
+                & + li {
+                    border-left: none;
+                    border-top: 1px solid rgba(0, 0, 0, 0.1);
+                }
+                display: inline;
+                padding: 10px 10px;
+                a{
+                    display: inline-block;
+                    width: 100%;
+                    text-decoration: none;
+                }
             }
         }
     }

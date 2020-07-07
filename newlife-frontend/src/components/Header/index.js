@@ -1,9 +1,35 @@
-import React from 'react'
-import { ContainerHeader, ContainerSidebar, ContainerNav } from './styles'
-import { MdPeople, MdPhone, MdShoppingCart } from 'react-icons/md'
+import React, {useState} from 'react'
+import { 
+    ContainerHeader, 
+    ContainerSidebar,
+    ContainerNav, 
+    ButtonNav 
+} from './styles'
+import { 
+    MdPeople,
+     MdPhone, 
+     MdShoppingCart, 
+     MdMenu,
+     MdClose
+} from 'react-icons/md'
+
 import { Link } from 'react-router-dom'
 
 export default function Header() {
+    const [state, setState] = useState(false)
+    const [active, setActive] = useState(true)
+    const [deactive, setDeactive] = useState(false)
+    const activeMenu = () => {
+        if(state){
+            setActive(true)
+            setDeactive(false)
+        }else{
+            setActive(false)
+            setDeactive(true)
+        }
+        setState(!state)
+    }
+
     return (
         <>
             <ContainerHeader>
@@ -29,7 +55,7 @@ export default function Header() {
             <ContainerSidebar>
                 <header>
                     <div className='img-logo'>
-                        <img src="https://pt.freelogodesign.org/Content/img/logo-samples/flooop.png" alt="" />
+                        <img src="https://revthink.com/wp-content/uploads/2018/04/revthink-logo-2018.png" alt="" />
                     </div>
                     <div className='cart'>
                         <Link to='/'><MdShoppingCart size={40} color='#0a00b6' />
@@ -37,7 +63,11 @@ export default function Header() {
                     </div>
                 </header>
             </ContainerSidebar>
-            <ContainerNav>
+            <ButtonNav inline={[active, deactive]}>
+                <button className='active' onClick={activeMenu}><MdMenu  size={50}/></button>
+                <button className='deactive' onClick={activeMenu}><MdClose  size={50}/></button>
+            </ButtonNav>
+            <ContainerNav act={deactive}>
                 <nav>
                     <ul>
                         <li><Link to=''>Sabão</Link></li>
