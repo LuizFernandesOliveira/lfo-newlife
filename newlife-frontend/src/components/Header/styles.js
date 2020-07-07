@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const ContainerHeader = styled.div`
 display: flex;
 justify-content: center;
 background: #0297d9;
@@ -71,6 +71,64 @@ header{
                 li{
                     display: inline-block;
                 }
+            }
+        }
+    }
+}
+`;
+
+export const ContainerSidebar = styled.div`
+display: flex;
+justify-content: center;
+background: white;
+header{
+    width: 80%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    div.img-logo{
+        padding: 0 10px;
+        img{
+            width: calc(40vmin + 10%);
+        }
+    }
+
+    div.cart{
+        padding: 0 10px;
+        display: flex;
+        align-items: center;
+    }
+}
+@media only screen and (max-width: 960px) {
+    header{
+        width: 100%;
+        height: 100px;
+        div.img-logo{
+            width: 50%;
+        }
+
+        div.cart{
+            width: 50%;
+            justify-content: flex-end;
+        }
+    }
+}
+`;
+
+export const ContainerNav = styled.div`
+display: flex;
+justify-content: center;
+nav{
+    width: 80%;
+
+    ul{
+        li{
+            display: inline;
+            padding: 4px 10px;
+            a{
+                text-decoration: none;
             }
         }
     }
