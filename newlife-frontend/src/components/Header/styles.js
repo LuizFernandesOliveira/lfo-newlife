@@ -4,6 +4,7 @@ export const ContainerHeader = styled.div`
 display: flex;
 justify-content: center;
 background: #0297d9;
+
 header{
     
     width: 80%;
@@ -97,8 +98,11 @@ header{
 
     div.cart{
         padding: 0 10px;
-        display: flex;
-        align-items: center;
+        a{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
     }
 }
 @media only screen and (max-width: 960px) {
@@ -120,13 +124,24 @@ header{
 export const ContainerNav = styled.div`
 display: flex;
 justify-content: center;
+background: white;
 nav{
     width: 80%;
+    height: 50px;
+    
 
     ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+         
+
         li{
+            & + li {
+                border-left: 1px solid rgba(0, 0, 0, 0.1);
+            }
             display: inline;
-            padding: 4px 10px;
+            padding: 10px 10px;
             a{
                 text-decoration: none;
             }

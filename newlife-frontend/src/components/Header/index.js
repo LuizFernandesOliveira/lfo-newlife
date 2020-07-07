@@ -32,8 +32,8 @@ export default function Header() {
                         <img src="https://pt.freelogodesign.org/Content/img/logo-samples/flooop.png" alt="" />
                     </div>
                     <div className='cart'>
-                        <MdShoppingCart size={40} color='#0a00b6' />
-                        <p>Meu Carrinho</p>
+                        <Link to='/'><MdShoppingCart size={40} color='#0a00b6' />
+                        <p>Meu Carrinho</p></Link>
                     </div>
                 </header>
             </ContainerSidebar>
